@@ -13,7 +13,8 @@ public class MongoDBContainer {
 
     @Container
     public static final GenericContainer<?> MONGO_DB_CONTAINER = new GenericContainer<>(
-            DockerImageName.parse("mongo:5.0.18")).withExposedPorts(27017)
+            DockerImageName.parse("mongo:5.0.18"))
+            .withExposedPorts(27017)
             .withReuse(true)
             .withEnv("MONGO_INITDB_ROOT_USERNAME", "user")
             .withEnv("MONGO_INITDB_ROOT_PASSWORD", "password")
