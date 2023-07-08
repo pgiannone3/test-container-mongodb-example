@@ -1,8 +1,0 @@
-spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 63716
-      database: user_management
-      username: test_container
-      password: test_container

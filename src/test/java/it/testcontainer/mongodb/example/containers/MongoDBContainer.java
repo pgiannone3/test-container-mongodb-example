@@ -15,10 +15,6 @@ public class MongoDBContainer {
     public static final GenericContainer<?> MONGO_DB_CONTAINER = new GenericContainer<>(
             DockerImageName.parse("mongo:5.0.18"))
             .withExposedPorts(27017)
-            .withReuse(true)
-            .withEnv("MONGO_INITDB_ROOT_USERNAME", "user")
-            .withEnv("MONGO_INITDB_ROOT_PASSWORD", "password")
-            .withEnv("MONGO_INITDB_DATABASE", "admin")
             .withCopyFileToContainer(MountableFile.forClasspathResource("./init-schema.js"), "/docker-entrypoint-initdb.d/init-script.js");
 
     static {
