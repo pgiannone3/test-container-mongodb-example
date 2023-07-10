@@ -13,7 +13,7 @@ public class MongoDBContainer {
 
     @Container
     public static final GenericContainer<?> MONGO_DB_CONTAINER = new GenericContainer<>(
-            DockerImageName.parse("mongo:5.0.18"))
+            DockerImageName.parse("mongo:6.0.7"))
             .withExposedPorts(27017)
             .withCopyFileToContainer(MountableFile.forClasspathResource("./init-schema.js"), "/docker-entrypoint-initdb.d/init-script.js");
 
